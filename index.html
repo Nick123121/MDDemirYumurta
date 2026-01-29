@@ -144,10 +144,12 @@
         }
 
         .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-family: 'Montserrat', sans-serif; /* Поменяли с Playfair Display */
+            font-weight: 700; /* Делаем заголовок жирным */
+            font-size: clamp(2.2rem, 8vw, 4.2rem);
             margin-bottom: 1rem;
             letter-spacing: 1px;
+            text-transform: uppercase; /* Опционально: делает надпись заглавными буквами для строгости */
         }
 
         .hero-content p {
@@ -220,7 +222,8 @@
         }
 
         .order-container h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif; /* Здесь тоже меняем */
+            font-weight: 700;
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 15px;
@@ -329,8 +332,7 @@
         <section class="hero">
             <div class="hero-content">
                 <video class="hero-logo-video" autoplay muted playsinline poster="logo.jpg">
-                    <source src="intro.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
+                    <source src="chick.mp4" type="video/mp4">
                 </video>
                 
                 <h1>Doğanın Kalbinden</h1>
@@ -412,3 +414,4 @@
     </script>
 </body>
 </html>
+
