@@ -117,8 +117,7 @@
 
         /* Hero Section */
         .hero {
-            height: 90vh;
-            min-height: 600px;
+            min-height: 100vh; /* Увеличили высоту для лучшего вида с крупным видео */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                         url('https://images.unsplash.com/photo-1599540037996-33565c58ebd7?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
@@ -128,48 +127,49 @@
             justify-content: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
-        /* Обновленные стили для видео-логотипа */
+        /* ВИДЕО: В 3 раза больше + без полос */
         .hero-logo-video {
-            max-width: 280px;
+            max-width: 840px; /* Было 280px, увеличили ровно в 3 раза */
             width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border: 3px solid var(--white);
-            background-color: #000; /* фон пока грузится видео */
+            height: 480px;    /* Задаем фиксированную высоту для кадрирования */
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+            border: 4px solid var(--white);
+            object-fit: cover; /* Убирает черные полосы, обрезая видео по краям */
+            background-color: #000;
         }
 
         .hero-content h1 {
-            font-family: 'Montserrat', sans-serif; /* Поменяли с Playfair Display */
-            font-weight: 700; /* Делаем заголовок жирным */
-            font-size: clamp(2.2rem, 8vw, 4.2rem);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 8vw, 4.8rem);
             margin-bottom: 1rem;
-            letter-spacing: 1px;
-            text-transform: uppercase; /* Опционально: делает надпись заглавными буквами для строгости */
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .hero-content p {
-            font-size: clamp(1rem, 4vw, 1.4rem);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
+            font-size: clamp(1.1rem, 4vw, 1.6rem);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
         }
 
         .cta-button {
             display: inline-block;
             background: var(--accent-color);
             color: var(--white);
-            padding: 15px 40px;
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .cta-button:hover {
@@ -180,19 +180,18 @@
         /* Features Section */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             padding: 80px 5%;
-            background: transparent;
         }
 
         .feature-card {
             text-align: center;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 40px 30px;
+            border-radius: 20px;
             background: var(--white);
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .feature-card:hover {
@@ -200,14 +199,9 @@
         }
 
         .feature-card i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--accent-color);
             margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
         }
 
         /* Order Section */
@@ -216,71 +210,66 @@
             margin: 40px auto 80px;
             padding: 40px;
             background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             text-align: center;
         }
 
         .order-container h2 {
-            font-family: 'Montserrat', sans-serif; /* Здесь тоже меняем */
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
 
         .order-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
             margin-top: 30px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
-            color: var(--text-dark);
         }
 
         select {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: 2px solid #eee;
-            border-radius: 10px;
+            border-radius: 12px;
             font-family: inherit;
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.3s;
-        }
-
-        select:focus {
-            border-color: var(--accent-color);
         }
 
         .btn-whatsapp {
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             margin-top: 40px;
             background: #25D366;
             color: white;
             border: none;
-            padding: 18px;
-            border-radius: 10px;
-            font-size: 1.1rem;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             transition: var(--transition);
         }
 
         .btn-whatsapp:hover {
             background: #128C7E;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
 
         /* Footer */
@@ -288,26 +277,23 @@
             background: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .footer-logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: block;
         }
 
-        .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
         @media (max-width: 768px) {
-            header { padding: 1rem 5%; }
-            .order-container { margin: 20px; padding: 30px 20px; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .hero-logo-video { max-width: 200px; }
+            .hero-logo-video { 
+                max-width: 100%; 
+                height: 300px; /* Уменьшаем на мобилках, чтобы влез текст */
+            }
+            .hero-content h1 { font-size: 2.5rem; }
+            .order-container h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -331,7 +317,7 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <video class="hero-logo-video" autoplay muted playsinline poster="logo.jpg">
+                <video class="hero-logo-video" autoplay muted playsinline loop poster="logo.jpg">
                     <source src="chick.mp4" type="video/mp4">
                 </video>
                 
@@ -414,4 +400,3 @@
     </script>
 </body>
 </html>
-
