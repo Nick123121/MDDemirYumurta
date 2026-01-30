@@ -117,46 +117,65 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh; /* Увеличили высоту для лучшего вида с крупным видео */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1599540037996-33565c58ebd7?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             color: var(--white);
-            padding: 40px 20px;
+            padding: 80px 5%;
         }
 
-        /* ВИДЕО: В 3 раза больше + без полос */
-        .hero-logo-video {
-            max-width: 384px; /* Уменьшено на 20% (480px * 0.8) */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            max-width: 1200px;
             width: 100%;
-            aspect-ratio: 1 / 1; /* Квадратная форма */
-            margin-bottom: 30px;
+            margin: 0 auto;
+        }
+
+        .hero-video-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-logo-video {
+            max-width: 384px;
+            width: 100%;
+            aspect-ratio: 1 / 1;
             border-radius: 20px;
             box-shadow: 0 15px 45px rgba(0,0,0,0.4);
             border: 4px solid var(--white);
-            object-fit: cover; /* Убирает черные полосы, обрезая видео по краям */
+            object-fit: cover;
             background-color: #000;
+        }
+
+        .hero-content {
+            flex: 1.2;
+            text-align: left;
         }
 
         .hero-content h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: clamp(2.5rem, 8vw, 4.8rem);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: clamp(1.1rem, 4vw, 1.6rem);
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 2.5rem;
             opacity: 0.95;
+            max-width: 600px;
         }
 
         .cta-button {
@@ -287,12 +306,28 @@
             display: block;
         }
 
+        @media (max-width: 992px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-logo-video { 
-                max-width: 224px; /* Уменьшено на 20% (280px * 0.8) */
-                aspect-ratio: 1 / 1; /* Сохраняем квадратную форму на мобилках */
+                max-width: 224px;
             }
-            .hero-content h1 { font-size: 2.5rem; }
             .order-container h2 { font-size: 2rem; }
         }
     </style>
@@ -316,14 +351,18 @@
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <video class="hero-logo-video" autoplay muted playsinline loop>
-                    <source src="chick.mp4" type="video/mp4">
-                </video>
+            <div class="hero-container">
+                <div class="hero-video-wrapper">
+                    <video class="hero-logo-video" autoplay muted playsinline loop>
+                        <source src="chick.mp4" type="video/mp4">
+                    </video>
+                </div>
                 
-                <h1>Doğanın Kalbinden</h1>
-                <p>En taze, en doğal yumurtalar MD Demir Yumurta güvencesiyle sofranızda.</p>
-                <a href="#siparis" class="cta-button">Hemen Sipariş Ver</a>
+                <div class="hero-content">
+                    <h1>Doğanın Kalbinden</h1>
+                    <p>En taze, en doğal yumurtalar MD Demir Yumurta güvencesiyle sofranızda.</p>
+                    <a href="#siparis" class="cta-button">Hemen Sipariş Ver</a>
+                </div>
             </div>
         </section>
 
