@@ -132,9 +132,9 @@
 
         /* ВИДЕО: В 3 раза больше + без полос */
         .hero-logo-video {
-            max-width: 840px; /* Было 280px, увеличили ровно в 3 раза */
+            max-width: 480px; /* Сделали квадратным */
             width: 100%;
-            height: 480px;    /* Задаем фиксированную высоту для кадрирования */
+            aspect-ratio: 1 / 1; /* Квадратная форма */
             margin-bottom: 30px;
             border-radius: 20px;
             box-shadow: 0 15px 45px rgba(0,0,0,0.4);
@@ -289,8 +289,8 @@
 
         @media (max-width: 768px) {
             .hero-logo-video { 
-                max-width: 100%; 
-                height: 300px; /* Уменьшаем на мобилках, чтобы влез текст */
+                max-width: 280px; 
+                aspect-ratio: 1 / 1; /* Сохраняем квадратную форму на мобилках */
             }
             .hero-content h1 { font-size: 2.5rem; }
             .order-container h2 { font-size: 2rem; }
@@ -317,7 +317,7 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <video class="hero-logo-video" autoplay muted playsinline loop poster="logo.jpg">
+                <video class="hero-logo-video" autoplay muted playsinline loop>
                     <source src="chick.mp4" type="video/mp4">
                 </video>
                 
